@@ -1,13 +1,9 @@
 # admin-service/Dockerfile
-FROM node:16
-
+FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+COPY target/*.jar app.jar
 
-COPY . .
+EXPOSE 8080
 
-EXPOSE 8000
-
-CMD ["node", "src/index.js"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
