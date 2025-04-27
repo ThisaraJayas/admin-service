@@ -5,7 +5,8 @@ public enum UserRole {
     admin("ROLE_ADMIN"),
     customer("ROLE_CUSTOMER"),
     restaurant("ROLE_RESTAURANT_ADMIN"),
-    delivery("ROLE_DELIVERY_PERSONNEL");
+    delivery("ROLE_DELIVERY_PERSONNEL"),
+    rider("ROLE_RIDER");
 
     private final String role;
 

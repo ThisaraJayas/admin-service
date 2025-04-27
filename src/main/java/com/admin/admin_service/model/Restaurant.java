@@ -14,7 +14,7 @@ public class Restaurant {
 
     private String name;
     private String owner;
-    private String location;
+    private String address;
     private int rating;
     private boolean isVerified;
 
