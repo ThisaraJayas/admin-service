@@ -13,4 +13,6 @@ public interface UserService {
     User verifyUser(String id, boolean isVerified);
 
     List<User> findByNameContainingIgnoreCase(String name);
+
+    User getUserById(String id);
 }

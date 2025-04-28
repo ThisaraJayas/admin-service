@@ -45,4 +45,9 @@ public class AdminController {
     public ResponseEntity<List<User>> searchUsers(@RequestParam String name) {
         return ResponseEntity.ok(userService.findByNameContainingIgnoreCase(name));
     }
+    @GetMapping("/users/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable String id) {
+        User user = userService.getUserById(id);
+        return ResponseEntity.ok(user);
+    }
 }

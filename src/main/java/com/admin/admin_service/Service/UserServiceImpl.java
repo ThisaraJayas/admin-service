@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService{
         throw new RuntimeException("User not found");
     }
 
+
     @Override
     public User verifyUser(String id, boolean isVerified) {
         Optional<User> userOptional = userRepository.findById(id);
@@ -59,5 +60,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> findByNameContainingIgnoreCase(String name) {
         return userRepository.findByNameContainingIgnoreCase(name);
+    }
+
+    @Override
+    public User getUserById(String id) {
+        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 }
