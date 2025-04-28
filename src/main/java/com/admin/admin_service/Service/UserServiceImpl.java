@@ -45,6 +45,7 @@ public class UserServiceImpl implements UserService{
         throw new RuntimeException("User not found");
     }
 
+
     @Override
     public User verifyUser(String id, boolean isVerified) {
         Optional<User> userOptional = userRepository.findById(id);
