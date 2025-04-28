@@ -60,4 +60,9 @@ public class UserServiceImpl implements UserService{
     public List<User> findByNameContainingIgnoreCase(String name) {
         return userRepository.findByNameContainingIgnoreCase(name);
     }
+
+    @Override
+    public User getUserById(String id) {
+        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+    }
 }
